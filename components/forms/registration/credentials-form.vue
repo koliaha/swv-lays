@@ -41,7 +41,7 @@ export default {
     return {
       textValid: {
         valid: true,
-        text: "Success Text",
+        text: "",
       },
       formModel: {
         email: "",
@@ -51,6 +51,8 @@ export default {
   },
   methods: {
     toggleLoading() {
+      this.textValid.valid = false
+      this.textValid.text= "Wait, that doesn't look like an email address"
       this.isLoading = !this.isLoading;
     },
   },

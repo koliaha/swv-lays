@@ -12,6 +12,7 @@
   &-back{
     top: 7px !important;
     display: block;
+    z-index: 10;
     @media screen and (min-width: 1024px) {
       display: none;
     }

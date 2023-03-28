@@ -9,21 +9,27 @@
       ]"
       @click="focusInput"
     >
+      <!-- @[updateEvent]="updateValue" -->
+
       <!-- @focus="onFocus" -->
       <input
-      :dir="isRtl ? 'rtl' : 'ltr'"
+        :dir="isRtl ? 'rtl' : 'ltr'"
         type="text"
         class="input-field"
         :value="modelValue"
         @blur="onBlur"
         @input="$emit('update:modelValue', $event.target.value)"
-        @[updateEvent]="updateValue"
         ref="inputRef"
         :disabled="disabled"
       />
-      <label :class="['input-label', { active: isFocused || modelValue },{ toRight: isRtl }]">{{
-        label
-      }}</label>
+      <label
+        :class="[
+          'input-label',
+          { active: isFocused || modelValue },
+          { toRight: isRtl },
+        ]"
+        >{{ label }}</label
+      >
       <!-- <span class="input-box"></span> -->
       <span
         :class="[
@@ -40,7 +46,10 @@
         ]"
       ></span>
     </div>
-    <div :class="['input-bottom', { invalid: !valid.valid },{ toRight: isRtl }]">
+    <div
+    v-if="!!valid.text.length"
+      :class="['input-bottom', { invalid: !valid.valid }, { toRight: isRtl }]"
+    >
       {{ valid.text }}
     </div>
   </div>
@@ -66,33 +75,38 @@ export default {
       default: () => {
         return {
           valid: true,
-          text: "Success Text",
+          text: "",
         };
       },
     },
-    isRtl:{
+    isRtl: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   data() {
     return {
       isFocused: false,
+      inBlur: true,
+      clickLabel: false,
     };
   },
   methods: {
     // onFocus() {
     //   this.isFocused = true;
     // },
-    onBlur() {
-      this.isFocused = !this.isFocused;
-    },
     focusInput() {
-      if (this.isFocused) return;
-      // this.isFocused = !this.isFocused;
+      
       this.isFocused = true;
+      // if (this.isFocused) return;
+      // this.isFocused = !this.isFocused;
+      // this.isFocused = true;
     },
-
+    onBlur() {
+      // this.inBlur = true
+      // this.inBlur = !this.inBlur
+      this.isFocused = false;
+    },
     updateValue(val) {
       emit("update:modelValue", val.target.value);
     },
@@ -112,7 +126,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .input {
   &-container {
     position: relative;
@@ -162,6 +175,9 @@ export default {
     color: $color-black-tint;
     width: 100%;
     background-color: transparent;
+    &::selection{
+      background: orange;
+    }
   }
   &-label {
     position: absolute;
@@ -179,13 +195,13 @@ export default {
       font-size: 12px;
       color: $color-black-base;
     }
-    &.toRight{
+    &.toRight {
       text-align: right;
       left: auto;
       right: 16px;
     }
   }
-  
+
   &-border {
     position: absolute;
     bottom: 0;
@@ -205,7 +221,7 @@ export default {
       background-color: $color-danger-base;
     }
   }
-  &-box{
+  &-box {
     height: 3px;
     bottom: 2.5px;
     border-radius: 0 0 2px 2px;
@@ -225,10 +241,9 @@ export default {
     &.invalid {
       color: $color-danger-base;
     }
-    &.toRight{
+    &.toRight {
       text-align: right;
     }
   }
 }
-
 </style>
