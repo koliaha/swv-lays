@@ -90,23 +90,13 @@ export default {
     return {
       isFocused: false,
       inBlur: true,
-      clickLabel: false,
     };
   },
   methods: {
     onFocus() {
       this.isFocused = true;
     },
-    focusInput() {
-      
-      this.isFocused = true;
-      // if (this.isFocused) return;
-      // this.isFocused = !this.isFocused;
-      // this.isFocused = true;
-    },
     onBlur() {
-      // this.inBlur = true
-      // this.inBlur = !this.inBlur
       this.isFocused = false;
     },
     updateValue(val) {
