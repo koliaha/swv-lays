@@ -1,0 +1,46 @@
+// @use "./colors" as colors;
+@import "./fonts";
+@import "./colors";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter";
+}
+a {
+  text-decoration: none;
+  color: $color-base;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 383px;
+  @media screen and (min-width: 768px) {
+    max-width: 680px;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 999px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 1352px;
+  }
+  @media screen and (min-width: 1920px) {
+    max-width: 1354px;
+  }
+  @media screen and (min-width: 2560px) {
+    max-width: 1546px;
+  }
+}
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.4s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+}

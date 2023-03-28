@@ -1,0 +1,1 @@
+export { default } from "file:///C:/Users/haqua/Documents/vue/swc-layouts/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
