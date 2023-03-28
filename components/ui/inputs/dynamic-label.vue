@@ -7,8 +7,9 @@
         { disabled },
         valid.valid ? 'valid' : 'invalid',
       ]"
-      @click="focusInput"
+      
     >
+    <!-- @click="focusInput" -->
       <!-- @[updateEvent]="updateValue" -->
 
       <!-- @focus="onFocus" -->
@@ -18,6 +19,7 @@
         class="input-field"
         :value="modelValue"
         @blur="onBlur"
+        @focus="onFocus"
         @input="$emit('update:modelValue', $event.target.value)"
         ref="inputRef"
         :disabled="disabled"
@@ -92,9 +94,9 @@ export default {
     };
   },
   methods: {
-    // onFocus() {
-    //   this.isFocused = true;
-    // },
+    onFocus() {
+      this.isFocused = true;
+    },
     focusInput() {
       
       this.isFocused = true;
