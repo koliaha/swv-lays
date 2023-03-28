@@ -174,16 +174,16 @@ export default {
   &-label {
     position: absolute;
     left: 16px;
-    top: 50%;
+    top: 18px;
     font-weight: 400;
     font-size: 16px;
     color: $color-medium-tint;
-    transform: translateY(-50%);
+    // transform: translateY(-50%);
     pointer-events: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     transform-origin: left;
     &.active {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
       font-size: 12px;
       color: $color-black-base;
     }
