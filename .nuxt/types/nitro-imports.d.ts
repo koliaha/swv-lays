@@ -68,8 +68,6 @@ declare global {
   const readBody: typeof import('h3')['readBody']
   const readMultipartFormData: typeof import('h3')['readMultipartFormData']
   const readRawBody: typeof import('h3')['readRawBody']
-  const sanitizeStatusCode: typeof import('h3')['sanitizeStatusCode']
-  const sanitizeStatusMessage: typeof import('h3')['sanitizeStatusMessage']
   const sealSession: typeof import('h3')['sealSession']
   const send: typeof import('h3')['send']
   const sendError: typeof import('h3')['sendError']
