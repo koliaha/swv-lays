@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <nav-bar>
-        <template #nav-content>
-          <div class="nav-content__text">
-            Already have an account? <a href="">Sign in</a> 
-          </div>
-        </template>
+      <template #nav-content>
+        <div class="nav-content__text">
+          Already have an account? <a href="">Sign in</a>
+        </div>
+      </template>
     </nav-bar>
     <NuxtLayout :name="layout" />
   </div>
@@ -20,10 +20,4 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.nav{
-&-content__text{
-  font-size: 16px;
-}
-}
-</style>
+

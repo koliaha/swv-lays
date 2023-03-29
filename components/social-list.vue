@@ -1,9 +1,10 @@
 <template>
-  <div class="solial-links">
+  <div class="solial-links" :class="{ socialReverse: isRtl }">
     <social-item v-for="(item, index) in socialList" :key="index" :data="item" />
   </div>
 </template>
 <script setup>
+  const isRtl = defineProps()
 const images = import.meta.glob(["assets/images/icons/*.svg"], {
   import: "default",
   eager: true,
@@ -41,5 +42,8 @@ const socialList = [
 .solial-links{
     display: flex;
     gap: 15px;
+    &.socialReverse{
+    flex-direction: row-reverse;
+    }
 }
 </style>
