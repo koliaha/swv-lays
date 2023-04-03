@@ -217,7 +217,7 @@ export default {
   }
   &-box {
     height: 3px;
-    bottom: 2.5px;
+    bottom: 3px;
     border-radius: 0 0 2px 2px;
     width: 100%;
     z-index: 3;
