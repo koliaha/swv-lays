@@ -7,15 +7,12 @@
         { disabled },
         valid.valid ? 'valid' : 'invalid',
       ]"
-      
     >
-    <!-- @click="focusInput" -->
-      <!-- @[updateEvent]="updateValue" -->
-
-      <!-- @focus="onFocus" -->
       <input
         :dir="isRtl ? 'rtl' : 'ltr'"
         type="text"
+        :id="idLabel"
+        :name="idLabel"
         class="input-field"
         :value="modelValue"
         @blur="onBlur"
@@ -25,6 +22,7 @@
         :disabled="disabled"
       />
       <label
+        :for="idLabel"
         :class="[
           'input-label',
           { active: isFocused || modelValue },
@@ -49,7 +47,7 @@
       ></span>
     </div>
     <div
-    v-if="!!valid.text.length"
+      v-if="!!valid.text.length"
       :class="['input-bottom', { invalid: !valid.valid }, { toRight: isRtl }]"
     >
       {{ valid.text }}
@@ -88,7 +86,7 @@ export default {
   data() {
     return {
       isFocused: false,
-      inBlur: true,
+      idLabel: "input-id",
     };
   },
   methods: {
@@ -126,7 +124,7 @@ export default {
     height: 60px;
     padding: 10px 0;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
     display: flex;
     align-items: flex-end;
 
@@ -166,22 +164,28 @@ export default {
     color: $color-black-tint;
     width: 100%;
     background-color: transparent;
-    &::selection{
-      background: rgba(244, 187, 73, 0.3);;
+    &::selection {
+      background: rgba(244, 187, 73, 0.3);
     }
   }
   &-label {
     position: absolute;
-    left: 16px;
-    top: 18px;
+    padding-left: 16px;
+    top: 0px;
+    padding-top: 18px;
+    width: 100%;
+    height: 100%;
     font-weight: 400;
     font-size: 16px;
     color: $color-medium-tint;
-    pointer-events: none;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transform-origin: left;
+    z-index: 10;
     &.active {
-      transform: translateY(-10px);
+      padding-top: 5px;
+      padding-bottom: 5px;
+      height: auto;
+      // transform: translateY(-10px);
       font-size: 12px;
       color: $color-black-base;
     }
@@ -197,13 +201,14 @@ export default {
     bottom: 0;
     z-index: 2;
     left: 50%;
-    width: 100%;
+    width: 0%;
     height: 5px;
     background-color: $color-base;
     transform: translateX(-50%) scaleX(0);
     transform-origin: center;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
     &.active {
+      width: 100%;
       transform: translateX(-50%) scaleX(1);
     }
     &.invalid {
@@ -217,7 +222,7 @@ export default {
     width: 100%;
     z-index: 3;
     background-color: $color-white-base;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
     &.invalid {
       background-color: $color-white-base;
     }

@@ -23,6 +23,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
   transition:background 0.1s ease-in;
   user-select: none;
   &:hover{
