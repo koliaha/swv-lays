@@ -1,28 +1,19 @@
 <template>
   <div class="btn">
-    {{ title || 'Go' }}
+    {{ title || "Go" }}
     <slot />
   </div>
-  <!-- @click="onClick" -->
-  <!-- <button :class="['loading-button', { 'is-loading': isLoading }]">
-    <span v-if="isLoading" class="loader"></span>
-    <slot></slot>
-  </button> -->
 </template>
 <script lang="ts">
 export default {
   props: {
-    title:{
-      type:String
-    },
-    isLoading: {
-      type: Boolean,
-      default: false,
+    title: {
+      type: String,
     },
   },
   methods: {
     onClick() {
-      this.$emit('click');
+      this.$emit("click");
     },
   },
 };
@@ -36,9 +27,18 @@ export default {
   font-size: 16px;
   text-align: center;
   color: white;
+  user-select: none;
+  outline: none;
   font-weight: 400;
   padding: 18px;
   cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background: $color-shade;
+  }
+  &:active {
+  transform: scaleY(0.95);
+}
 }
 .loading-button {
   position: relative;
