@@ -1,6 +1,6 @@
 <template>
   <div class="solial-links" :class="{ socialReverse: isRtl }">
-    <social-item v-for="(item, index) in socialList" :key="index" :data="item" />
+    <forms-social-item v-for="(item, index) in socialList" :key="index" :data="item" />
   </div>
 </template>
 <script setup>

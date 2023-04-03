@@ -4,6 +4,6 @@
       <img src="@/assets/images/icons/arrow.svg" alt="arrow" />
     </nuxt-link>
     <forms-registration-credentials-form :is-rtl="true" />
-    <lottie-image class="registration-image" />
+    <lottie-registration class="registration-image" />
   </main>
 </template>

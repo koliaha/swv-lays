@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <nav-bar>
+    <header-nav>
       <template #nav-content>
         <div class="nav-content__text">
-          Already have an account? <a href="">Sign in</a>
+          Already have an account? <a href="" class="link">Sign in</a>
         </div>
       </template>
-    </nav-bar>
+    </header-nav>
     <NuxtLayout :name="layout" />
   </div>
 </template>

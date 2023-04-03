@@ -1,8 +1,7 @@
-// @use "./colors" as colors;
-@import "./fonts";
-@import "./colors";
-@import './registration.scss';
-@import './form.scss';
+@import "./abstracts/colors";
+@import "./abstracts/fonts";
+@import "./registration";
+@import "./form";
 * {
   margin: 0;
   padding: 0;
@@ -44,10 +43,16 @@ a {
   &:hover {
     opacity: 0.7;
   }
-  &.reverse{
+  &.reverse {
     transform: rotate(180deg);
     left: auto;
     right: 0;
   }
 }
-
+.link {
+  color: $color-base;
+  transition: color 0.1s ease;
+  &:hover {
+    color: $color-shade;
+  }
+}

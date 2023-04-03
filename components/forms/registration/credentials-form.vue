@@ -8,7 +8,7 @@
         <h2 class="form-title">Join the battlefield</h2>
         <ui-inputs-dynamic-label
           class="form-input"
-          label="Text"
+          label="Email"
           v-model="formModel.email"
           :valid="textValid"
         />
@@ -21,14 +21,14 @@
         >
         <p class="form-terms">
           By continuing, you agree to Selfwork's
-          <a href="">Terms of Service</a> and acknowledge you've read our
-          <a href="">Privacy Policy</a>
+          <a href="" class="link">Terms of Service</a> and acknowledge you've read our
+          <a href="" class="link">Privacy Policy</a>
         </p>
       </form>
       <div class="form-variants">
         <div class="form-variants-text">Or sign up with</div>
       </div>
-      <social-list class="form-social" />
+      <forms-social-list class="form-social" />
     </div>
   </div>
   <div v-if="isRtl === true">
@@ -53,14 +53,14 @@
           ></ui-buttons-button-base
         >
         <p class="form-terms">
-          <a href="">بالمتابعة ، فإنك توافق على</a> Selfwork's شروط الخدمة 
-          <a href="">سياسة الخصوصية</a>وتقر بأنك قرأت
+          <a href="" class="link">بالمتابعة ، فإنك توافق على</a> Selfwork's شروط الخدمة 
+          <a href="" class="link">سياسة الخصوصية</a>وتقر بأنك قرأت
         </p>
       </form>
       <div class="form-variants">
         <div class="form-variants-text">أو اشترك مع</div>
       </div>
-      <social-list class="form-social" :is-rtl="true"/>
+      <forms-social-list class="form-social" :is-rtl="true"/>
     </div>
   </div>
 </template>

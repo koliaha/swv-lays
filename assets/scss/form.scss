@@ -1,5 +1,5 @@
 .form {
-  &-back{
+  &-back {
     display: none;
     @media screen and (min-width: 1024px) {
       display: block;
@@ -38,9 +38,6 @@
     line-height: 16px;
     margin-bottom: 30px;
     color: $color-medium-tint;
-    a {
-      color: $color-base;
-    }
   }
   &-variants {
     position: relative;

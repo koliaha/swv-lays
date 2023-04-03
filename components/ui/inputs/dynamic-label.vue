@@ -57,7 +57,6 @@
   </div>
 </template>
 <script>
-// lang="ts"
 export default {
   props: {
     label: {
@@ -168,7 +167,7 @@ export default {
     width: 100%;
     background-color: transparent;
     &::selection{
-      background: orange;
+      background: rgba(244, 187, 73, 0.3);;
     }
   }
   &-label {
@@ -178,7 +177,6 @@ export default {
     font-weight: 400;
     font-size: 16px;
     color: $color-medium-tint;
-    // transform: translateY(-50%);
     pointer-events: none;
     transition: all 0.3s ease-in-out;
     transform-origin: left;
@@ -205,7 +203,6 @@ export default {
     transform: translateX(-50%) scaleX(0);
     transform-origin: center;
     transition: 0.3s ease;
-    // transition-delay: 0.2s;
     &.active {
       transform: translateX(-50%) scaleX(1);
     }

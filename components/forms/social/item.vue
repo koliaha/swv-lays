@@ -23,9 +23,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.2s ease-in;
+  transition:background 0.1s ease-in;
+  user-select: none;
   &:hover{
-    opacity: 0.6;
+  background: $color-white-hover;
   }
 }
 </style>
